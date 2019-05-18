@@ -23,6 +23,7 @@ fun main(args: Array<String>) {
         // 0 - (-c/-d)  1 - (key)  2 - (inputName)  3 - (-o)  4 - (outputName)
         for (i in 0 until args.size) {
             if (args[i] == "-c" || args[i] == "-d") {
+                if (args[i] == "-d")
                 key = args[i + 1]
                 inputName = args[i+2]
             }
@@ -30,11 +31,17 @@ fun main(args: Array<String>) {
                 outputName = args[i+1]
             }
         }
-        nyx(inputName, outputName, key)
+        val cypher = Coder()
+        cypher.encode(inputName, outputName, key)
 
     }
 }
 
 fun printHelp() {
-    println("")
+    println("Использование: ciphxor [-c key] [-d key] inputname.txt [-o outputname.txt]\n" +
+            "Параметры: \n" +
+            "-с             шифрация\n" +
+            "-d             дешифрация\n" +
+            "-о             имя выходного файла\n"
+    )
 }
