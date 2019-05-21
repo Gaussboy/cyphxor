@@ -23,8 +23,7 @@ fun main(args: Array<String>) {
         // 0 - (-c/-d)  1 - (key)  2 - (inputName)  3 - (-o)  4 - (outputName)
         for (i in 0 until args.size) {
             if (args[i] == "-c" || args[i] == "-d") {
-                if (args[i] == "-d")
-                key = args[i + 1]
+                    key = args[i + 1]
                 inputName = args[i+2]
             }
             if (args[i] == "-o") {
